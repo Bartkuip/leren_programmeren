@@ -10,6 +10,5 @@ total = croissant * croissantAmount + stokbrood * stokbroodAmount - korting * ko
 print(round(croissant * int(croissantAmount),2), 'euro kosten de croissants')
 print(round(stokbrood * int(stokbroodAmount), 2), 'euro kosten de stokbroden')
 print(round(korting * int(kortingAmount), 2), 'euro korting')
-print(total, 'euro')
-
+print(round(total, 2), 'euro')
 
