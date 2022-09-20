@@ -6,7 +6,6 @@ rijbewijs = input("Heeft u een vrachtwagen rijbewijs")
 hoed = input("Bent u in bezit van een hoge hoed?")
 gender = input("Bent u een man/vrouw?")
 if gender == "man":
-    raise NameError('hoe durf je')
     snor = int(input("Hoe lang is uw snor in centimeter")) #10 of hoger
     haar = 0
 if gender == "vrouw":
@@ -14,15 +13,18 @@ if gender == "vrouw":
     if rood == "ja":
         haar = int(input("Hoelang is uw haar in centimeter")) #20cm of langer
         snor = 0
+if gender == "geen van beide":
+    raise NameError('hoe durf je')
 lengte = int(input("Hoelang bent u in centimeters?"))
 kilo = int(input("Hoe zwaar weegt u?"))
+if kilo >= 120:
+    raise NameError('https://fitforfree.nl/')
+
 certificaat = input("Bent u in bezit van een 'Overleven met gevaarlijk personeel certificaat?'")
 league = input("Speel je league of legends?")
 if league == "ja":
     raise NameError('Schaam je dood')
 ananas = input("Heeft je favoriete pizza ananas als ingredient?")
-if ananas == "ja":
-    raise NameError('Gadverdamme')
 input("Heeft u een laptop?")
 input("Favoriete basketbal speler?")
 
