@@ -19,6 +19,11 @@ def damageGoblin():
     damageGoblin = random.randint(lowRoll,highRoll)
     return damageGoblin
 
+def damageFire():
+    lowRoll = 15 + config.playerLevel * 2
+    highRoll = 30 + config.playerLevel * 2
+    damage = random.randint(lowRoll,highRoll)
+    return damage
 def damageOrc():
     lowRoll = 3
     highRoll = 6 
@@ -32,8 +37,8 @@ def damageTroll():
     return damageTroll
 
 def damageGerlard():
-    lowRoll = 100
-    highRoll = 150
+    lowRoll = 7
+    highRoll = 15
     damageGerlard = random.randint(lowRoll,highRoll)
     return damageGerlard
 

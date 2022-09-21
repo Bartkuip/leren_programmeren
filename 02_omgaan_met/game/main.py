@@ -1,8 +1,12 @@
 import functions
 import config
-
 story = 0
-while True:    
+fireball = 0
+green = False
+while True:
+    print("CONTROLS: ATTACK: a, attack, hit, damage, d and HEAL: h, heal, recover")
+    print("Welcome, in this game you will attempt to escape the dungeon whilst fighting monsters on your way.") 
+    print("You encounter a goblin! [",config.goblinHealth,"/",config.goblinHealth,"]")
     while story == 0:
         if config.playerHealth >= 0:
             attack = input("What attack do you want to use?").lower()
@@ -158,7 +162,10 @@ while True:
                 print("The enemy health is", config.unknownHealth)
                 if config.unknownHealth <= 0:
                     functions.levelUp()
+                    print("You enter a maze..")
+                    directionMaze = input("Do you want to go left or right?")
                     story += 1
+
             elif attack in ["heal", "recover", "h"]:
                 print("Your health is", config.playerHealth)
                 print("The enemy health is", config.unknownHealth)
@@ -173,5 +180,89 @@ while True:
         else: 
             functions.endGame()
 
-    while story == 7:
-        functions.endGame()
+    while story == 7:  
+        if directionMaze == "left":
+            print("Puzzle room!")
+            color = input('''There are 4 colored buttons on the wall, which one do you choose? 
+            A) RED 
+            B) BLUE 
+            C) GREEN 
+            D) YELLOW
+            ''')
+            if color in ["red", "RED", "r", "a"]:
+                print("You pressed the red button but you find absolutely nothing, select another button")
+            elif color in ["blue", "BLUE", "b"]:
+                print("You clicked the blue button, 20 monsters jump out and kill you")
+                functions.endGame()
+            elif color in ["green", "GREEN", "g", "c"]:
+                if green is False:
+                    print("You pressed the green button and find a new magic spell named 'Fireball'")
+                    print("---- FIREBALL ----")
+                    print("- Damage: 15-30 --")
+                    print("------------------")
+                    green = True
+                    fireball = 1
+                else:
+                    print("The room is empty now.")
+            elif color in ["yellow", "YELLOW", "Y", "d"]:
+                story += 1
+            else:
+                print("Select a button!")
+        elif directionMaze == "right":
+            print("You ran into a trap..")
+            quit()
+        else:
+            print("Select left or right.")
+            directionMaze = input("Do you want to go left or right?")
+        
+    while story == 8:
+        print("You pressed the yellow button, a random door opens... you proceed with caution")
+        directionMaze2 = input("Do you want to go left or right?").lower()
+        if directionMaze2 == "left":
+            print("You walk right into a trap")
+            functions.endGame()
+        elif directionMaze2 == "right":
+            print("You encounter GERLARD THE OVERLORD.")
+            print("Select a move")
+            config.playerHealth += 100
+            print(config.playerHealth)
+            story += 1
+        else:
+            print("Select left or right!")
+            directionMaze == "a"
+            color = "yellow"
+    while story == 9:
+        if config.playerHealth >= 0:
+            attack = input("What attack do you want to use?").lower()
+            if attack in ["attack", "hit", "damage", "d", "a"]:
+                playerHealth = config.playerHealth
+                damage = functions.damage()
+                config.gerlardHealth -= damage
+                print("Your health is", config.playerHealth)
+                print("The enemy health is", config.gerlardHealth)
+                if config.gerlardHealth <= 0:
+                    print("Congratulations")
+                    functions.endGame()
+            elif attack in ["heal", "recover", "h"]:
+                print("Your health is", config.playerHealth)
+                print("The enemy health is", config.gerlardHealth)
+                heal = functions.heal()
+                config.playerHealth += heal
+            if fireball == 1:
+                if attack in ["fireball", "fire", "f"]:
+                    playerHealth = config.playerHealth
+                    damage = functions.damageFire()
+                    config.gerlardHealth -= damage
+                    print("Your health is", config.playerHealth)
+                    print("The enemy health is", config.gerlardHealth)
+                    if config.gerlardHealth <= 0:
+                        print("Congratulations")
+                        functions.endGame()            
+            else:
+                functions.attackDialogue()
+
+            enemyDamage = functions.damageGerlard()
+            config.playerHealth -= enemyDamage
+        else:
+            print("You died to gerlard.")
+            quit()
