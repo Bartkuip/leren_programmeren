@@ -3,6 +3,7 @@ import config
 story = 0
 fireball = 0
 green = False
+
 while True:
     print("CONTROLS: ATTACK: a, attack, hit, damage, d and HEAL: h, heal, recover")
     print("Welcome, in this game you will attempt to escape the dungeon whilst fighting monsters on your way.") 
@@ -141,7 +142,8 @@ while True:
         direction = input("Where do you want to go? left or right")
         if direction in ["l", "left"]:
             print('You decided to go left')
-            print('You encounter a monster, it slices you in half without hesitation.')
+            print('You walk over a trip wire, the walls slowly come towards you for an inevitable death.')
+            print('fkin noob gg ez shouldve picked right git gud')
             functions.endGame()
         elif direction in ["r", "right"]:
             print('You decided to go right')
