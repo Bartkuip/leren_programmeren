@@ -17,7 +17,7 @@ if gender == "geen van beide":
     raise NameError('hoe durf je')
 lengte = int(input("Hoelang bent u in centimeters?"))
 kilo = int(input("Hoe zwaar weegt u?"))
-if kilo >= 120:
+if kilo >= 140:
     raise NameError('https://fitforfree.nl/')
 
 certificaat = input("Bent u in bezit van een 'Overleven met gevaarlijk personeel certificaat?'")
