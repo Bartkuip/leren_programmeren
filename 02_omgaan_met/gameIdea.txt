@@ -1,0 +1,22 @@
+game idee:
+Je gaat een toffe game in Python maken, waarin je verschillende keuzes kan maken.
+Deze game ga je eerst op papier beschrijven.
+Je gaat dus eerst het verhaal/onderwerp/doel van je game bedenken, net alsof je zelf de klant bent.
+
+Deze opdracht moet aan de volgende functionele eisen voldoen:
+
+het verhaal kent een "win" einde;
+het verhaal kent meerdere "faal" eindes;
+het verhaal kent meerdere routes en meerdere eindpunten
+
+doolhof 
+start met 5
+
+
+map structure:
+
+            -> x -> trap
+x -> x -> x 
+            -> x -> boss
+
+door een doolhof heen lopen met monsters en valkuilen, als je het einde hebt gehaald dan heb je gewonnen, meerdere faaleindes 
