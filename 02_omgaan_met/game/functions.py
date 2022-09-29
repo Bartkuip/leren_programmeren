@@ -16,11 +16,10 @@ def damage():
     return damage
 
 def heal():
-    if config.playerHealth >= 100:
-        lowRoll = 2 + config.playerLevel * 2
-        highRoll = 10 + config.playerLevel * 2
-        heal = random.randint(lowRoll,highRoll)
-        return heal
+    lowRoll = 2 + config.playerLevel * 2
+    highRoll = 10 + config.playerLevel * 2
+    heal = random.randint(lowRoll,highRoll)
+    return heal
 
 def damageGoblin():
     lowRoll = 1
@@ -222,3 +221,5 @@ def winGame():
 ──────────╔═╝║
 ──────────╚══╝''')
     quit()
+
+
