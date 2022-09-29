@@ -1,13 +1,15 @@
 import functions
 import config
+from functions import print_delay
+
 story = 0
 fireball = 0
 green = False
 
 while True:
-    print("CONTROLS: ATTACK: a, attack, hit, damage, d and HEAL: h, heal, recover")
-    print("Welcome, in this game you will attempt to escape the dungeon whilst fighting monsters on your way.") 
-    print("You encounter a goblin! [",config.goblinHealth,"/",config.goblinHealth,"]")
+    print_delay("CONTROLS: ATTACK: a, attack, hit, damage, d and HEAL: h, heal, recover \n")
+    print_delay("Welcome, in this game you will attempt to escape the dungeon whilst fighting monsters on your way. \n") 
+    functions.goblinEncounter()    
     while story == 0:
         if config.playerHealth >= 0:
             attack = input("What attack do you want to use?").lower()
@@ -19,7 +21,7 @@ while True:
                 print("The enemy health is", config.goblinHealth)
                 if config.goblinHealth <= 0:
                     functions.levelUp()
-                    print("----YOU HAVE ENCOUNTERED A NEW ENEMY: ORC ----[",config.orcHealth,"/",config.orcHealth,"]")
+                    functions.orcEncounter()
                     story += 1
             elif attack in ["heal", "recover", "h"]:
                 print("Your health is", config.playerHealth)
@@ -45,7 +47,7 @@ while True:
                 print("The enemy health is", config.orcHealth)
                 if config.orcHealth <= 0:
                     functions.levelUp()
-                    print("----YOU HAVE ENCOUNTERED A NEW ENEMY: TROLL ----[",config.trollHealth,"/",config.trollHealth,"]")
+                    functions.trollEncounter()
                     story += 1
             elif attack in ["heal", "recover", "h"]:
                 print("Your health is", config.playerHealth)
@@ -72,7 +74,7 @@ while True:
                 print("The enemy health is", config.trollHealth)
                 if config.trollHealth <= 0:
                     functions.levelUp()
-                    print("----YOU HAVE ENCOUNTERED A NEW ENEMY: GERLARD THE OVERLORD----[",config.gerlardHealth,"/",config.gerlardHealth,"]")
+                    functions.gerlardEncounter()
                     story += 1
             elif attack in ["heal", "recover", "h"]:
                 print("Your health is", config.playerHealth)
@@ -109,8 +111,8 @@ while True:
         else:
             config.playerHealth = 100
             print('You are back to',config.playerHealth,'health')
-            print('GERLARD THE OVERLORD has defeated you, you are now in the purgatory')
-            print("----YOU HAVE ENCOUNTERED A NEW ENEMY: ZOMBIE ----[",config.zombieHealth,"/",config.zombieHealth,"]")
+            print_delay('GERLARD THE OVERLORD has defeated you, you are now in the purgatory \n')
+            functions.zombieEncounter()
             story += 1
 
     while story == 4:
@@ -147,7 +149,7 @@ while True:
             functions.endGame()
         elif direction in ["r", "right"]:
             print('You decided to go right')
-            print('You encounter a monster, you cannot identify what it is... [???/???]')
+            functions.unknownEncounter()
             story += 1
         else:
             print('left or right?')
@@ -258,8 +260,7 @@ while True:
                     print("Your health is", config.playerHealth)
                     print("The enemy health is", config.gerlardHealth)
                     if config.gerlardHealth <= 0:
-                        print("Congratulations")
-                        functions.endGame()            
+                        functions.winGame()      
             else:
                 functions.attackDialogue()
 
