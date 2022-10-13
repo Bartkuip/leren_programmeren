@@ -10,7 +10,7 @@ while True:
         quit()
     else:
         aantal +=1
-        question = input("?", aantal)
+        question = input("?")
         
     
 
