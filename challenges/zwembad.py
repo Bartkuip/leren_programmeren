@@ -1,13 +1,13 @@
-lengte = 8
-breedte = 3
-hoogte = 1.5
+lengte = float(input("Hoe lang?"))
+breedte = float(input("Hoe breed?"))
+hoogte = float(input("Hoe hoog?"))
 kubiekePrijsUitgraven = 25
 kubiekePrijsGrond = 32.50
 kilometerAfstand = 60
 kubiekeTotaal = lengte * breedte * hoogte
+totaalPrijs = round(kubiekePrijsGrond * kubiekeTotaal + kubiekePrijsUitgraven *kubiekeTotaal, 2)
 
-print(kubiekeTotaal * kubiekePrijsUitgraven)
-print(kubiekeTotaal * kubiekePrijsGrond)
-print(f"Totale prijs is: {kubiekePrijsGrond * kubiekeTotaal + kubiekePrijsUitgraven *kubiekeTotaal} euro")
+print(round(kubiekeTotaal * kubiekePrijsUitgraven, 2))
+print(round(kubiekeTotaal * kubiekePrijsGrond, 2))
+print(f"Totale prijs is: {totaalPrijs} euro")
 print(f"Voorrij kosten zijn: {2.05 * kilometerAfstand + 250} euro")
-#60 kilometer afstand, 250+ 2.05 per km
