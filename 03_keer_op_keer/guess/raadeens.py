@@ -22,7 +22,6 @@ while rondeInput >= 1 or rondeInputMax <= 0:
     randomNumber = random.randint(0,1000)
     while raden <= 9:
         raden += 1
-        #print(randomNumber)
         getalInput = int(input("Welk getal denk je dat het is?"))
         if getalInput == randomNumber:
             print(f"Je hebt gewonnen, het getal was {randomNumber}, +1 punt")
@@ -40,16 +39,16 @@ while rondeInput >= 1 or rondeInputMax <= 0:
             if abs(getalInput - randomNumber) < 20:
                 print("HEEL HEET")
             else:
-                print("heet")
+                print("Heet")
         elif abs(getalInput - randomNumber) > 50:
             hogerLager()
-            print("koud")
+            print("Koud")
     while raden >= 10:
         print("Helaas je hebt het niet geraden binnen 10 beurten")
         volgende = input("Wil je door naar de volgende ronde?").lower()
         if volgende == "ja":
             raden = 0
-        elif volgende == "nee":
+        else:
             print(f"je hebt {punten} punt(en)")
             quit()
         
