@@ -10,7 +10,7 @@ kubiekePrijsGrond = 32.50
 uitgraven = round(kubiekeTotaal * kubiekePrijsUitgraven, 2)
 grond = round(kubiekeTotaal * kubiekePrijsGrond, 2)
 totaalTegel = 0
-kilometerAfstand = 60
+kilometerAfstand = input("Hoeveel kilometer moeten wij rijden")
 #alles is nu hardcoded voor 60 kilometer afstand, kan ik evt aanpassen
 #if statement voor de m3
 if tegelKeuze == "standaard" and kubiekeTotaal < 20:
@@ -25,6 +25,9 @@ elif tegelKeuze == "kleur" and kubiekeTotaal < 20:
     totaalTegel =  aantalTegels * 250 + 125
 elif tegelKeuze == "kleur" and kubiekeTotaal >= 20:
     totaalTegel = aantalTegels * 200 + 100
+
+#if kubiekeTotaal < 20 and kilometerAfstand > 50:
+
 
 totaalPrijs = round(uitgraven + grond + totaalTegel + 2.05 * kilometerAfstand + 250 ,2)
 

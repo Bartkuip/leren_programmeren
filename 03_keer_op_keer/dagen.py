@@ -9,3 +9,10 @@ while not doorgaan:
     if dagen[index] == stopDag:
         doorgaan = True
     index += 1
+
+#tweede uitwerking:
+#doeVolgendeDag = True
+#while doeVolgendeDag:
+#    print(dagen[index])
+#    doeVolgendeDag = dagen[index] != stopDag
+ #   index += 1

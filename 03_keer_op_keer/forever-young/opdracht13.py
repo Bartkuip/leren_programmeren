@@ -3,7 +3,7 @@ from RobotArm import RobotArm
 robotArm = RobotArm()
 robotArm.randomLevel(1,7)
 
-# Jouw python instructies zet je vanaf hier:
+
 teller = 9
 for x in range(0,9):
     robotArm.grab()

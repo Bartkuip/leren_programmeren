@@ -1,8 +1,13 @@
 import random
+import time
 rondeInput = int(input("Hoeveel rondes wil je spelen?"))
+while rondeInput > 20:
+    print("Geef een input onder 20, max rondes is 20!")
+    rondeInput = int(input("Hoeveel rondes wil je spelen?"))
 randomNumber = random.randint(0,1000)
 punten = 0
 raden = 0
+rondeInputMax = 20
 
 def hogerLager():
     if getalInput > randomNumber:
@@ -10,9 +15,9 @@ def hogerLager():
     elif getalInput < randomNumber:
         print('Hoger')
 
-while rondeInput >= 1:
+while rondeInput >= 1 or rondeInputMax <= 0:
     print(f"Je hebt nog {rondeInput} rondes om te spelen")
-    #raden = 0
+    rondeInputMax -= 1
     rondeInput -= 1
     randomNumber = random.randint(0,1000)
     while raden <= 9:
@@ -27,6 +32,7 @@ while rondeInput >= 1:
                 break
             elif volgende == "nee":
                 print(f"je hebt {punten} punt(en)")
+                time.sleep(10)
                 quit()
 
         elif abs(getalInput - randomNumber) < 50:
