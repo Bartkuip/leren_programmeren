@@ -29,7 +29,7 @@ while rondeInput >= 1 or rondeInputMax <= 0:
             volgende = input("Wil je door naar de volgende ronde?").lower()
             if volgende == "ja":
                 break
-            elif volgende == "nee":
+            else:
                 print(f"je hebt {punten} punt(en)")
                 time.sleep(10)
                 quit()
