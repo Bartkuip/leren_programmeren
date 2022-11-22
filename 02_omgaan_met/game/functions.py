@@ -9,7 +9,7 @@ def print_delay(string):
         sys.stdout.flush()
         time.sleep(0.02)
 
-def damage():
+def damage() -> int:
     lowRoll = 0 + config.playerLevel * 2
     highRoll = 5 + config.playerLevel * 2
     damage = random.randint(lowRoll,highRoll)
