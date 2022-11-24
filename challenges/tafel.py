@@ -8,5 +8,6 @@
 
 lijst = [5, 12, 19, 27, 3]
 lijst.append(25)
+
+lijst.pop(0)
 print(lijst)
-print(len(lijst))
