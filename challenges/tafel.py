@@ -14,6 +14,11 @@ lijst.insert(0, 36)
 lijst.clear()
 for x in range(1, 4):
     lijst.append(x)
+for x in range(4, 51):
+    lijst.append(x)
+
 
 print(lijst)
 print(sum(lijst))
+
+print(lijst[25])
