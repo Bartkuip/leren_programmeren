@@ -8,6 +8,8 @@
 
 lijst = [5, 12, 19, 27, 3]
 lijst.append(25)
-
+lijst.remove(12)
 lijst.pop(0)
+
+lijst.insert(0, 36)
 print(lijst)
