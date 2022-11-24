@@ -11,6 +11,9 @@ lijst.append(25)
 lijst.remove(12)
 lijst.pop(0)
 lijst.insert(0, 36)
-print(lijst)
+lijst.clear()
+for x in range(1, 4):
+    lijst.append(x)
 
+print(lijst)
 print(sum(lijst))
