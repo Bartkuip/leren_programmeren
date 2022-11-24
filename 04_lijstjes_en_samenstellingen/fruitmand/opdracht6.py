@@ -1,7 +1,7 @@
-import fruitmand
+from fruitmand import fruitmand
 
-for x in range(len(fruitmand.fruitmand)):
-    if fruitmand.fruitmand[x]['rond'] == "appel":
-        print(fruitmand.fruitmand[x]['weight'])
+for x in range(len(fruitmand)):
+    if fruitmand[x]['rond'] == "appel":
+        print(fruitmand[x]['weight'])
 
         

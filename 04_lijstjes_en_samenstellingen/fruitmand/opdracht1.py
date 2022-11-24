@@ -1,3 +1,3 @@
-import fruitmand
+from fruitmand import fruitmand
 
-print(fruitmand.fruitmand)
+print(fruitmand)
