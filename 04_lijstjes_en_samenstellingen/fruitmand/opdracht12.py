@@ -25,4 +25,4 @@ kleurTranslation = {
     "pink" : "roze"
 }
 
-print(f'De "{naam}" ({lengte} letters) heeft een {kleur} kleur en een gewicht van {gewicht} kg.')
+print(f'De "{naam}" ({lengte} letters) heeft een {kleur} kleur en een gewicht van {gewicht / 1000} kg.')
