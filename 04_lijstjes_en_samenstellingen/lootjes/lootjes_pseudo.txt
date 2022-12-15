@@ -2,12 +2,13 @@ Start het programma
 maak een lege lijst
 
 herhaal
-    input van de naam
-    is de nieuwe naam uniek?
-    zo ja, voeg de nieuwe naam toe aan de lijst
+    vragen naar de naam
+    is de naam uniek?
+    zo ja, voeg de naam toe aan de lijst
     als er 3 of meer namen worden toegevoegd:
         nog een naam toevoegen?
-        zo nee dan stopt de herlaling
+        zo nee dan stopt de herhaling
+    zo nee, print naam heb ik al
 
 herhaal:
     shuffle alle lootjes (namen)

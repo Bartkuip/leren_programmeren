@@ -3,7 +3,7 @@ keuze = True
 
 while keuze:
     boodschapInput = input("Voeg een boodschap toe").lower()
-    boodschapAantal = input(f"Hoeveel {boodschapInput} wil je?")
+    boodschapAantal = int(input(f"Hoeveel {boodschapInput} wil je?"))
     if boodschapInput in boodschappen.keys():
         boodschappen.update({boodschapInput: boodschapAantal})
     boodschappen[boodschapInput] = boodschapAantal

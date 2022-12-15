@@ -15,7 +15,6 @@ while newNames:
         else:
             if len(nameList) < 3:
                 print("Niet genoeg namen")
-                quit()
             else:
                 newNames = False
                 shuffling = True
@@ -32,4 +31,4 @@ while shuffling:
             shuffling = True    
 
 for x, y in lootjesGen.items():
-    print(f"{y} heeft {x.capitalize()}")
+    print(f"{y.capitalize()} heeft {x.capitalize()}")
