@@ -1,0 +1,21 @@
+Start het programma
+maak een lege lijst
+
+herhaal
+    input van de naam
+    is de nieuwe naam uniek?
+    zo ja, voeg de nieuwe naam toe aan de lijst
+    als er 3 of meer namen worden toegevoegd:
+        nog een naam toevoegen?
+        zo nee dan stopt de herlaling
+
+herhaal:
+    shuffle alle lootjes (namen)
+    herhaal: voor alle lootjes
+        check of namen niet gelijk staan aan eigen lootjes
+    als niemand hun eigen lootje heeft stop herhaling
+
+alle lootjes zijn nu goed uitgedeeld
+print namen met gekozen lootjes
+
+Stop het programma

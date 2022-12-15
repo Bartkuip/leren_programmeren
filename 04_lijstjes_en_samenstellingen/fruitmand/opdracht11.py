@@ -21,7 +21,6 @@ for x in range(len(fruitmand)):
             rond -= 1
             nietRond += 1
 
-print(f"{rond} rond, {nietRond} niet rond, {welRond} wel rond")
 
 #“Er zijn {X} meer ronde vruchten dan niet ronde vruchten in de kleur {kleur}”
 if welRond > nietRond:
