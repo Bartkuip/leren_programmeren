@@ -14,7 +14,7 @@ for x in kleuren:
 for y in range(7):
     randomKaart = random.choices(deck)
     teller += 1
-    print(f"Kaarten {teller} : {randomKaart}")
+    print(f"Kaart {teller} : {randomKaart}")
 print(deck)
 
 
