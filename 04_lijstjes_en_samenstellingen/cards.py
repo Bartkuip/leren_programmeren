@@ -10,7 +10,6 @@ for x in kleuren:
     for y in kaarten:
         deck.append(f"{x} {y}")
 
-
 for y in range(7):
     randomKaart = random.choices(deck)
     teller += 1
