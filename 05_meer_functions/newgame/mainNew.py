@@ -3,10 +3,14 @@ from configNew import *
 monsterOrder = 0
 listOfMonsters = ["Goblin", "Orc", "Troll", "Gerlard", "Unknown"]
 story = 1
+fireball = 0
 playerHealth, playerLevel = startGame(playerHealth, playerLevel)
 while story == 1:
     #if index is out of range do something else?
+    #if enemyEncounter(listOfMonsters[monsterOrder]) != len(listOfMonsters) - 1:
     monsterHealth, monsterDamage = enemyEncounter(listOfMonsters[monsterOrder]) #list maken en optellen? zo min mogelijk code
+    #else:
+    #    story = 2
     while monsterHealth >= 1:    
         print(playerLevel)       
         userMove = str(input("What attack do you want to use? Attack/Heal")).lower()
