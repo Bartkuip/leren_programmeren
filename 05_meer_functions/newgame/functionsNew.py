@@ -36,6 +36,4 @@ def turnSequence(move, hp, lvl, monsterhp, monsterdmg):
         hp -= monsterdmg
         print(f"hp van monster is: {monsterhp}")
         print(f"hp van character is: {hp}")
-    elif move in ["heal", "recover", "h"]:
-        print("test")
     return hp, monsterhp
