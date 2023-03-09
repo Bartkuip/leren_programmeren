@@ -4,6 +4,7 @@ monsterOrder = 0
 listOfMonsters = ["Goblin", "Orc", "Troll", "Gerlard", "Unknown"]
 story = 1
 artifact = 0
+green = False
 playerHealth, playerLevel = startGame(playerHealth, playerLevel)
 while story == 1:
     if monsterOrder < len(listOfMonsters):
@@ -20,9 +21,11 @@ while story == 1:
 #maze part after index is out of range:
 
 while story == 2:
-    artifact += 1
-    print(f"You found an artifact after beating all the monsters ({artifact})")
-    print("Puzzle room!")
+    if artifact == 0:
+        artifact += 1
+        print(f"You found an artifact after beating all the monsters ({artifact})")
+    else:
+        print("Puzzle room!")
     color = input('''There are 4 colored buttons on the wall, which one do you choose? 
     A) RED 
     B) BLUE 
@@ -47,6 +50,8 @@ while story == 2:
         if door in ["left", "l"]:
             print("You found the exit of the dungeon, congratulations!")
             print(f"You collected {artifact} artifacts.")
+            story = 3
+            
         elif door in ["right", "r"]:
             print("Decypher the code")
             correctWord = input("trab rood neverhcseg si edoc ezed").lower()
@@ -54,6 +59,8 @@ while story == 2:
                 artifact += 1
                 print("You found the exit of the dungeon, congratulations!")
                 print(f"You collected {artifact} artifacts.")
+                story = 3
+                
             else:
                 print("You entered the wrong code... the floor collapses")
                 quit()
@@ -62,3 +69,10 @@ while story == 2:
             door = input("Do you want to take left or right?")
     else:
         print("Select a button!")
+
+while story == 3:
+    repeat = input("Wil je nog een keer spelen? (alleen ja of nee) \n")
+    if repeat == "ja":
+        story = 1
+    else:
+        quit()
